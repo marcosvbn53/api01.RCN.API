@@ -29,7 +29,9 @@ namespace RCN.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
+            services.AddApplicationInsightsTelemetry("f05b3bdd-bc07-4074-b975-f6e39e0e0d7c");
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
             .AddJsonOptions(Options=>{
                 Options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
